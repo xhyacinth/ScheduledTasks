@@ -21,7 +21,7 @@ def main():
         bot_id=bot_id,
         user_id="github-actions-scheduler",
         additional_messages=[
-            Message.build_user_question("执行定时任务，请触发车场信息心跳消息")
+            Message.build_user_question_text("请执行定时任务：触发车场信息心跳消息")
         ]
     )
     
