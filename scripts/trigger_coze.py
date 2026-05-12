@@ -25,7 +25,7 @@ def main():
         ]
     )
     
-    result = response.messages[-1].content
+    result = response.msg
     print(f"任务执行结果:\n{result}")
     
 if __name__ == '__main__':
