@@ -4,8 +4,8 @@ from cozepy import COZE_CN_BASE_URL, Coze, TokenAuth, Message
 
 def main():
     # 从环境变量获取配置
-    coze_token = os.getenv('COZE_TOKEN', 'pat_8jMuWFBh5HLuLs9r3JYH9TlXoy3890qih2VG9klHhCp2LZzVdOqXQTj5T6OudtZk')
-    bot_id = os.getenv('BOT_ID', '7638805151256084523')
+    coze_token = 'pat_8jMuWFBh5HLuLs9r3JYH9TlXoy3890qih2VG9klHhCp2LZzVdOqXQTj5T6OudtZk'
+    bot_id = '7638805151256084523'
     
     if not coze_token:
         raise Exception("COZE_TOKEN 未配置")
