@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from cozepy import COZE_CN_BASE_URL, Coze, TokenAuth, Message
+from datetime import datetime
 
 def main():
     # 从环境变量获取配置
@@ -16,7 +17,7 @@ def main():
         base_url=COZE_CN_BASE_URL
     )
     
-    # 方式1：简单文本消息
+    # 任务1：车场心跳
     response = coze.chat.create(
         bot_id=bot_id,
         user_id="github-actions-scheduler",
@@ -24,6 +25,16 @@ def main():
             Message.build_user_question_text("请执行定时任务：触发车场信息心跳消息")
         ]
     )
+    
+    # 方式2：每日反馈
+    if 12 <= datetime.now().hour <= 14:
+        response = coze.chat.create(
+            bot_id=bot_id,
+            user_id="github-actions-scheduler",
+            additional_messages=[
+                Message.build_user_question_text("请执行定时任务：提醒每日反馈消息")
+            ]
+        )
     
     result = response.msg
     print(f"任务执行结果:\n{result}")
