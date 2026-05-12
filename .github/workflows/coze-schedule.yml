@@ -29,7 +29,7 @@ jobs:
       
       - name: Run Coze Task
         env:
-          COZE_TOKEN: ${{ secrets.COZE_TOKEN }}
-          BOT_ID: ${{ secrets.BOT_ID }}
+          COZE_TOKEN: pat_8jMuWFBh5HLuLs9r3JYH9TlXoy3890qih2VG9klHhCp2LZzVdOqXQTj5T6OudtZk
+          BOT_ID: 7638805151256084523
         run: |
           python scripts/trigger_coze.py
