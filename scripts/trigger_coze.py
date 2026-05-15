@@ -29,14 +29,14 @@ def main():
     # )
     
     # 方式2：每日反馈
-    if 12 <= datetime.now().hour <= 14:
-        response = coze.chat.create(
-            bot_id=bot_id,
-            user_id="github-actions-scheduler",
-            additional_messages=[
-                Message.build_user_question_text("请执行定时任务：提醒每日反馈消息")
-            ]
-        )
+    # if 12 <= datetime.now().hour <= 14:
+    response = coze.chat.create(
+        bot_id=bot_id,
+        user_id="github-actions-scheduler",
+        additional_messages=[
+            Message.build_user_question_text("请执行定时任务：提醒每日反馈消息")
+        ]
+    )
     
     print(f"任务执行结果:\n{response}")
     
